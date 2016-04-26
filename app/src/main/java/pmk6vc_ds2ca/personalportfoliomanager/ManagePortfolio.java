@@ -20,14 +20,15 @@ import java.net.URL;
 public class ManagePortfolio extends AppCompatActivity {
 //    private PortfolioDatabase portfolio = new PortfolioDatabase(this); // Create new DB
     private String[] stockInfo = new String[7]; // Info for the current stock in question
-    private final CharSequence toastMsgFindData = "Data not available. Check your internet connection and ticker spelling.";
-    private final CharSequence toastMsgAddPosition = "Data in incorrect format. Cannot be stored";
+    private final CharSequence toastMsgFindData = "Data not available. Check internet connection and spelling.";
+    private final CharSequence toastMsgNaN = "Please input an integer number of shares";
+    private final CharSequence toastMsgAddPosition = "Data in incompatible format. Cannot be stored";
     private final CharSequence toastMsgSuccess = "Position added to portfolio!";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_manage_portfolio);
     }
 
     public void getStockInfo(View v) {
@@ -48,6 +49,9 @@ public class ManagePortfolio extends AppCompatActivity {
         // Fetch inputted ticker
         EditText tickerBox = (EditText) findViewById(R.id.ticker_input);
         String ticker = tickerBox.getText().toString();
+        EditText numSharesBox = (EditText) findViewById(R.id.numShares_input);
+        String numSharesString = numSharesBox.getText().toString();
+        int numShares = 0;
 
         // ERROR CHECKING
         // Small bug: When this button is clicked directly after an invalid input is sitting in text fields, the incorrect toast pops up
@@ -57,7 +61,20 @@ public class ManagePortfolio extends AppCompatActivity {
 
             ManagePortfolio.this.runOnUiThread(new Runnable() {
                 public void run() {
-                    Toast.makeText(ManagePortfolio.this, toastMsgFindData, Toast.LENGTH_LONG).show();
+                    Toast.makeText(ManagePortfolio.this, toastMsgFindData, Toast.LENGTH_SHORT).show();
+                }
+            });
+            return;
+        }
+
+        try {
+            numShares = Integer.parseInt(numSharesString);
+        } catch (Exception e) {
+            Log.d("ManagePortfolio", "Non-integral share number");
+
+            ManagePortfolio.this.runOnUiThread(new Runnable() {
+                public void run() {
+                    Toast.makeText(ManagePortfolio.this, toastMsgNaN, Toast.LENGTH_SHORT).show();
                 }
             });
             return;
@@ -88,16 +105,17 @@ public class ManagePortfolio extends AppCompatActivity {
             values.put("YearLow", yearlow);
             values.put("EPS", eps);
             values.put("PriceEarnings", pe);
+            values.put("NumShares", numShares);
 
             portfolioDB.insert("Portfolio",
                     null,
                     values);
-        } catch (Exception e) {
+        } catch (Exception e) { // More error checking
             Log.d("YahooPuller", "Nonsensical input", e);
 
             ManagePortfolio.this.runOnUiThread(new Runnable() {
                 public void run() {
-                    Toast.makeText(ManagePortfolio.this, toastMsgAddPosition, Toast.LENGTH_LONG).show();
+                    Toast.makeText(ManagePortfolio.this, toastMsgAddPosition, Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -107,7 +125,7 @@ public class ManagePortfolio extends AppCompatActivity {
         Log.d("ManagePortfolio", "Values entered in database!");
         ManagePortfolio.this.runOnUiThread(new Runnable() {
             public void run() {
-                Toast.makeText(ManagePortfolio.this, toastMsgSuccess, Toast.LENGTH_LONG).show();
+                Toast.makeText(ManagePortfolio.this, toastMsgSuccess, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -171,7 +189,7 @@ public class ManagePortfolio extends AppCompatActivity {
 
                 ManagePortfolio.this.runOnUiThread(new Runnable() {
                     public void run() {
-                        Toast.makeText(ManagePortfolio.this, toastMsgFindData, Toast.LENGTH_LONG).show();
+                        Toast.makeText(ManagePortfolio.this, toastMsgFindData, Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -196,7 +214,7 @@ public class ManagePortfolio extends AppCompatActivity {
 
                 ManagePortfolio.this.runOnUiThread(new Runnable() {
                     public void run() {
-                        Toast.makeText(ManagePortfolio.this, toastMsgFindData, Toast.LENGTH_LONG).show();
+                        Toast.makeText(ManagePortfolio.this, toastMsgFindData, Toast.LENGTH_SHORT).show();
                     }
                 });
 

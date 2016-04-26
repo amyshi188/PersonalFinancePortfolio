@@ -40,6 +40,7 @@ public class PortfolioDatabase extends SQLiteOpenHelper {
         52 wk low: integer (see Price)
         EPS: float
         P/E: float
+        Number of shares: integer
      */
     // Don't forget to add number of shares as a field!
     public void onCreate(SQLiteDatabase db) {
@@ -51,7 +52,8 @@ public class PortfolioDatabase extends SQLiteOpenHelper {
                 "YearHigh integer, " +
                 "YearLow integer, " +
                 "EPS float, " +
-                "PriceEarnings float" +
+                "PriceEarnings float," +
+                "NumShares integer" +
                 ")"
         );
     }
