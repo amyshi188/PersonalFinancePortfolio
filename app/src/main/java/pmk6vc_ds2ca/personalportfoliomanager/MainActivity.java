@@ -17,7 +17,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
-    // Testing
+    // TEST COMMENT FOR GITHUB UPLOAD
     private PortfolioDatabase portfolio = new PortfolioDatabase(this); // Create new DB
     private String[] stockInfo = new String[7]; // Info for the current stock in question
 
