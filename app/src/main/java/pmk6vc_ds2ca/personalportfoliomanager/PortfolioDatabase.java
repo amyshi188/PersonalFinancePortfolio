@@ -9,15 +9,29 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class PortfolioDatabase extends SQLiteOpenHelper {
 
+    private static PortfolioDatabase STATIC_PORTFOLIO; // Required for singleton pattern
+
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "Portfolio.db";
 
 
-    public PortfolioDatabase (Context context) {
+    // Implement singleton pattern to ensure static DB reference throughout application
+    // See: http://www.androiddesignpatterns.com/2012/05/correctly-managing-your-sqlite-database.html
+    public static synchronized PortfolioDatabase getInstance(Context context) {
+
+        // Use the application context, which will ensure that you
+        // don't accidentally leak an Activity's context.
+        // See this article for more information: http://bit.ly/6LRzfx
+        if (STATIC_PORTFOLIO == null) {
+            STATIC_PORTFOLIO = new PortfolioDatabase(context.getApplicationContext());
+        }
+        return STATIC_PORTFOLIO;
+    }
+
+    private PortfolioDatabase (Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    // NEED TO UPDATE FOR STOCK INFO
     /*
         Name: varchar([Number of characters])
         Price (cents): integer (note: convert price to cents so they can be represented as integers!)
@@ -50,5 +64,7 @@ public class PortfolioDatabase extends SQLiteOpenHelper {
         db.execSQL("delete table Portfolio");
         onCreate(db);
     }
+
+
 
 }
