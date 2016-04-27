@@ -3,13 +3,18 @@ package pmk6vc_ds2ca.personalportfoliomanager;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.hardware.SensorListener;
+import android.hardware.SensorManager;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.seismic.ShakeDetector;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -17,18 +22,45 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class ManagePortfolio extends AppCompatActivity {
+public class ManagePortfolio extends AppCompatActivity implements ShakeDetector.Listener {
 //    private PortfolioDatabase portfolio = new PortfolioDatabase(this); // Create new DB
     private String[] stockInfo = new String[7]; // Info for the current stock in question
     private final CharSequence toastMsgFindData = "Data not available. Check internet connection and spelling.";
     private final CharSequence toastMsgNaN = "Please input an integer number of shares";
     private final CharSequence toastMsgAddPosition = "Data in incompatible format. Cannot be stored";
     private final CharSequence toastMsgSuccess = "Position added to portfolio!";
+    private SensorManager sm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_portfolio);
+        this.sm = (SensorManager) getSystemService(SENSOR_SERVICE);
+        ShakeDetector sd = new ShakeDetector(this);
+        sd.start(sm);
+    }
+
+    // Shake listener
+    public void hearShake() {
+        EditText nameText = (EditText) findViewById(R.id.name);
+        EditText currentPriceText = (EditText) findViewById(R.id.current_price);
+        EditText pctchangeText = (EditText) findViewById(R.id.pctchange);
+        EditText yearhighText = (EditText) findViewById(R.id.yearhigh);
+        EditText yearlowText = (EditText) findViewById(R.id.yearlow);
+        EditText epsText = (EditText) findViewById(R.id.eps);
+        EditText peratioText = (EditText) findViewById(R.id.peratio);
+
+        try {
+            nameText.setText("");
+            currentPriceText.setText("");
+            pctchangeText.setText("");
+            yearhighText.setText("");
+            yearlowText.setText("");
+            epsText.setText("");
+            peratioText.setText("");
+        } catch (Exception e) {
+            // Stuff
+        }
     }
 
     public void getStockInfo(View v) {

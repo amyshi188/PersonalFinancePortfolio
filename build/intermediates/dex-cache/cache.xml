@@ -16,13 +16,6 @@
         <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\jackson-databind-2.4.3_d39ba8f26ef7a2e690308d143502b38c417eda94.jar" />
     </item>
     <item
-        jar="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
-        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-8.4.0_838356f2c40cbedace86bd165d9461d50aa0f81d.jar" />
-    </item>
-    <item
         jar="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.2"
@@ -35,6 +28,13 @@
         revision="23.0.2"
         sha1="292a9fa091757208efa65e77eef63088247e51f3">
         <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.2.0_50612804d4c76ae38cbe4d7a64d288b56df38562.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-8.4.0_838356f2c40cbedace86bd165d9461d50aa0f81d.jar" />
     </item>
     <item
         jar="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\jars\classes.jar"
@@ -65,18 +65,18 @@
         <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-23.2.0_3490536fa8115f5b2bf9649068a91653def3a204.jar" />
     </item>
     <item
-        jar="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="6e3578f92f7462d1a935a1d36173e3bdd1234976">
-        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.2.0_bc08bf9fd5907021394b41d94d7a4366df2fc639.jar" />
-    </item>
-    <item
         jar="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.2"
         sha1="e5f32fa48a3eb2de0c987025c11b6e3864b634d9">
         <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.2.0_8226e2b9be015e8b427a0d9976b1cb4c566b3fe7.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6e3578f92f7462d1a935a1d36173e3bdd1234976">
+        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.2.0_bc08bf9fd5907021394b41d94d7a4366df2fc639.jar" />
     </item>
     <item
         jar="C:\Users\Ted\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp\okhttp\2.7.0\1477ec5caf8319ab4b51eb43553cd66aa86fdea5\okhttp-2.7.0.jar"
@@ -133,6 +133,13 @@
         revision="23.0.2"
         sha1="98476622f10715998eacf9240d6b479f12c66143">
         <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\okio-1.6.0_5ce43cadcce9b2659fb54137bb7134b789df474b.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ted\.gradle\caches\modules-2\files-2.1\com.squareup\seismic\1.0.2\41252e3eff887b3ab9a2ef9e4e9218f999d85b68\seismic-1.0.2.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="41252e3eff887b3ab9a2ef9e4e9218f999d85b68">
+        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\seismic-1.0.2_c3b6b3078bf835295c48b24c38f638d58cbe5da2.jar" />
     </item>
     <item
         jar="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.4.0\jars\classes.jar"
