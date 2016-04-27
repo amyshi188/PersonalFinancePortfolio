@@ -3,6 +3,8 @@ package pmk6vc_ds2ca.personalportfoliomanager;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +15,7 @@ import android.location.LocationManager;
 import android.text.Html;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.yelp.clientlib.connection.YelpAPI;
@@ -70,6 +73,29 @@ public class LocationActivity extends AppCompatActivity implements LocationListe
             mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 0, this);
         } catch (SecurityException se) {    //error if permission not granted
             Log.d("GPS", se.toString());
+        }
+
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        if (activeNetworkInfo != null && activeNetworkInfo.isConnected()) {
+            // Set default location to be Charlottesville, VA
+            // Retrieve Yelp data for Charlottesville
+            YelpTask yt = new YelpTask();
+            double lat_init = 38.035638;
+            double long_init = -78.503357;
+            yt.execute(lat_init, long_init);
+            DecimalFormat df = new DecimalFormat("##.00");
+            latitudeText.setText(df.format(lat_init));
+            longitudeText.setText(df.format(long_init));
+        } else {
+            // No network connection
+            Context context = getApplicationContext();
+            CharSequence text = "No Internet connection available...";
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
         }
     }
 
@@ -152,7 +178,7 @@ public class LocationActivity extends AppCompatActivity implements LocationListe
                 }
             } catch (Exception e) {
                 Log.d("YELP", "Exception caught");
-                retval = "Error connecting to Yelp API.\n";
+                retval = "Retrieving nearest financial advisers...\n";
             }
             return retval;
         }

@@ -1,2 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="C:\Users\Ted\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.4.3\4cb3dbb0c2f75b51aa7543c53252989785a0c609\jackson-core-2.4.3.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="4cb3dbb0c2f75b51aa7543c53252989785a0c609">
+        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\jackson-core-2.4.3_8c10e1c0384dceead4b5f2108754043f91ea0269.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ted\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.4.3\feff63199be7b8f495c2f3e2096dcb6bd5e5b0b3\jackson-databind-2.4.3.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="feff63199be7b8f495c2f3e2096dcb6bd5e5b0b3">
+        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\jackson-databind-2.4.3_d39ba8f26ef7a2e690308d143502b38c417eda94.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-8.4.0_838356f2c40cbedace86bd165d9461d50aa0f81d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a8412b654dab86d57bf90683367488211c8a81f1">
+        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-location-8.4.0_0ea41a1ea5c335b4a21c9322e64ad34eed91997e.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="292a9fa091757208efa65e77eef63088247e51f3">
+        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.2.0_50612804d4c76ae38cbe4d7a64d288b56df38562.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-8.4.0_5374e8beaadfa32c6584fc7e72fb059902401412.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ted\.gradle\caches\modules-2\files-2.1\commons-codec\commons-codec\1.3\fd32786786e2adb664d5ecc965da47629dca14ba\commons-codec-1.3.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="fd32786786e2adb664d5ecc965da47629dca14ba">
+        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\commons-codec-1.3_dd46130b1b37cf803413d6eb764c637c3d9172e5.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ted\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.2.0\support-annotations-23.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="c5bf571bb10462bd90e5419ade67793f71acbc87">
+        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\support-annotations-23.2.0_5c08c86394413fc11d9fd785b5a4e37eb486159a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8c108c22c99e794eff255bb34d2a461200c4cbb0">
+        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-23.2.0_3490536fa8115f5b2bf9649068a91653def3a204.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6e3578f92f7462d1a935a1d36173e3bdd1234976">
+        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.2.0_bc08bf9fd5907021394b41d94d7a4366df2fc639.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e5f32fa48a3eb2de0c987025c11b6e3864b634d9">
+        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.2.0_8226e2b9be015e8b427a0d9976b1cb4c566b3fe7.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ted\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp\okhttp\2.7.0\1477ec5caf8319ab4b51eb43553cd66aa86fdea5\okhttp-2.7.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="1477ec5caf8319ab4b51eb43553cd66aa86fdea5">
+        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\okhttp-2.7.0_f8e5349be9bcec3a0a71541d0a4f4fd9805772ac.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ted\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit\converter-jackson\2.0.0-beta2\4548c670afd8930f183c0aa1124c889464f8a0ea\converter-jackson-2.0.0-beta2.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="4548c670afd8930f183c0aa1124c889464f8a0ea">
+        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\converter-jackson-2.0.0-beta2_96bbd0a648ee4357252f259cfde6343a2a3c9489.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ted\.gradle\caches\modules-2\files-2.1\oauth.signpost\signpost-core\1.2.1.2\bf95955dcf3d5a78c201e49b0c336787ea73f161\signpost-core-1.2.1.2.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="bf95955dcf3d5a78c201e49b0c336787ea73f161">
+        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\signpost-core-1.2.1.2_ca6aacb8fa521c280893aacdcd71d96509355134.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ted\.gradle\caches\modules-2\files-2.1\com.yelp.clientlib\yelp-android\1.0.0\2f95ba7e129b83be3c86b1526e69dddea193cec5\yelp-android-1.0.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="2f95ba7e129b83be3c86b1526e69dddea193cec5">
+        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\yelp-android-1.0.0_0a49119b2e80e2abbd23ad6e41a377559f162c49.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ted\.gradle\caches\modules-2\files-2.1\com.google.auto.value\auto-value\1.1\f6951c141ea3e89c0f8b01da16834880a1ebf162\auto-value-1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="f6951c141ea3e89c0f8b01da16834880a1ebf162">
+        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\auto-value-1.1_1099591d3afb3f89da1a2c9995d553f0100ce7b3.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ted\.gradle\caches\modules-2\files-2.1\se.akerfeldt\okhttp-signpost\1.0.0\d28b2bc7927a8cf44da15671ce856f756e5428ce\okhttp-signpost-1.0.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d28b2bc7927a8cf44da15671ce856f756e5428ce">
+        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\okhttp-signpost-1.0.0_4a4f008f6a1c25e12696e61459b5c950961cc994.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ted\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.4.0\d6a66c7a5f01cf500377bd669507a08cfeba882a\jackson-annotations-2.4.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d6a66c7a5f01cf500377bd669507a08cfeba882a">
+        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\jackson-annotations-2.4.0_959253f1649a9591eaf26385773ce0282103a466.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ted\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\okio-1.6.0_5ce43cadcce9b2659fb54137bb7134b789df474b.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="04de44f90606c77f3b28cf44861f306290505aac">
+        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-maps-8.4.0_9c0d6eab13efb7ff51660e3f8eda4a97e23ea985.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ted\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit\retrofit\2.0.0-beta2\880d9e0997b2d1bfc98e0d121ced33ee5d04aac4\retrofit-2.0.0-beta2.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="880d9e0997b2d1bfc98e0d121ced33ee5d04aac4">
+        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\retrofit-2.0.0-beta2_dbf72ea647b7cf3dd70277bf61f140456c6c3f9a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\jars\libs\internal_impl-23.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6e239441500605809818997dd63b62a947195f8c">
+        <dex dex="C:\Users\Ted\Documents\Amy\PersonalFinancePortfolio\PersonalFinancePortfolio\app\build\intermediates\pre-dexed\debug\internal_impl-23.2.0_ab67fe8a2b54c4e3f459d8eff1da60ad253dc69b.jar" />
+    </item>
+
+</items>
