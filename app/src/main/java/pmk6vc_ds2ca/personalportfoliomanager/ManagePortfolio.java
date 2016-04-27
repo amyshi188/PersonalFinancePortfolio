@@ -61,6 +61,8 @@ public class ManagePortfolio extends AppCompatActivity implements ShakeDetector.
         } catch (Exception e) {
             // Stuff
         }
+
+        Toast.makeText(this, "Screen contents cleared due to shake!", Toast.LENGTH_SHORT).show();
     }
 
     public void getStockInfo(View v) {
