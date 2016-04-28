@@ -207,6 +207,15 @@
         android:layout_alignStart="@+id/findAdvisers"
         android:inputType="number"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="edit positions"
+        android:id="@+id/editPositionsButton"
+        android:layout_alignTop="@+id/get_data"
+        android:layout_alignParentEnd="true"
+        android:onClick="editPortfolioScreen"/>
+
 
 </RelativeLayout>
 </ScrollView>

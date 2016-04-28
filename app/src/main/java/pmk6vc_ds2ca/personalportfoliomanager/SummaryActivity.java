@@ -11,9 +11,16 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.utils.ColorTemplate;
+
 import org.w3c.dom.Text;
 
 import java.io.File;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -32,10 +39,15 @@ public class SummaryActivity extends AppCompatActivity {
         if (databaseExists(getApplicationContext())) {
             // Query DB here
             updatePortfolio();
+
+            // Chart
+            createChart();
+
             // Analytics
-            displayPortfolioValue();
-            displayPortfolioPE();
-            displayPortfolioEPS();
+            // NEED APPROPRIATE VIEW COMPONENTS
+            // displayPortfolioValue();
+            // displayPortfolioPE();
+            // displayPortfolioEPS();
         } else {
             // Indicate no DB yet
             SummaryActivity.this.runOnUiThread(new Runnable() {
@@ -51,15 +63,42 @@ public class SummaryActivity extends AppCompatActivity {
         // Check if DB exists
         if (databaseExists(getApplicationContext())) {
             updatePortfolio();
+            createChart();
         };
         super.onResume();
     }
 
+    // Create chart
+    public void createChart() {
+        PieChart pieChart = (PieChart) findViewById(R.id.chart);
+        // Create data values
+        ArrayList<Entry> entries = new ArrayList<>();
+        ArrayList<String> labels = new ArrayList<>();
+        // Iterate through portfolio
+        // Guaranteed to be updated vals, since called right after updatePortfolio()
+        int i = 0;
+        for (Stock s : portfolioList) {
+            // Add data
+            double portval = calculatePortfolioValue();
+            double posval = s.getNumShares() * s.getCurrentPrice();
+            float val = (float)(posval/portval);
+            entries.add(new Entry(val, i));
+            // Add label
+            labels.add(s.getTicker());
+
+            i++;
+        }
+
+        PieDataSet dataset = new PieDataSet(entries, "Position weights");
+        dataset.setColors(ColorTemplate.COLORFUL_COLORS);
+        PieData data = new PieData(labels, dataset);
+        pieChart.setData(data);
+    }
+
     // Update portfolio by clearing list and querying DB
+    // http://stackoverflow.com/questions/10111166/get-all-rows-from-sqlite
     public void updatePortfolio() {
         portfolioList.clear();
-        TextView positions = (TextView) findViewById(R.id.setOfPositionsView);
-        positions.setText("");
         Log.d("SummaryActivity", "Portfolio and view cleared, ready for update...");
 
         SQLiteDatabase staticDB = PortfolioDatabase.getInstance(this).getWritableDatabase();
@@ -82,7 +121,6 @@ public class SummaryActivity extends AppCompatActivity {
                 Stock s = new Stock(ticker, name, price, percChange, yearHigh, yearLow, eps, pe, numShares);
                 portfolioList.add(s);
                 Log.d("SummaryActivity", ticker + " successfully added to portfolio list!");
-                positions.append(name);
 
                 cursor.moveToNext();
             }
@@ -104,7 +142,7 @@ public class SummaryActivity extends AppCompatActivity {
 
         return value; // Return value as CENTS
     }
-
+    /*
     public void displayPortfolioValue() {
         double valueDol = calculatePortfolioValue() / 100; // Value in dollars
         TextView pval = (TextView) findViewById(R.id.portfolioValue);
@@ -152,6 +190,7 @@ public class SummaryActivity extends AppCompatActivity {
         TextView peps = (TextView) findViewById(R.id.portfolioEPS);
         peps.setText(Double.toString(eps));
     }
+    */
 
     // Listener for Manage Portfolio button
     public void managePortfolioScreen(View view) {
@@ -162,6 +201,7 @@ public class SummaryActivity extends AppCompatActivity {
     }
 
     // Check if DB exists
+    // http://stackoverflow.com/questions/3386667/query-if-android-database-exists
     private static boolean databaseExists(Context context) {
         File dbFile = context.getDatabasePath(PortfolioDatabase.DATABASE_NAME);
         if (dbFile.exists()) {
