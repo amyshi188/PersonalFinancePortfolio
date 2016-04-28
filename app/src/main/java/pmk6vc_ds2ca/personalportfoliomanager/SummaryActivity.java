@@ -8,11 +8,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.StringTokenizer;
 
 /**
  * Created by varunkulkarni122 on 4/28/16.
@@ -53,6 +55,7 @@ public class SummaryActivity extends AppCompatActivity {
     public void updatePortfolio() {
         portfolioList.clear();
         Log.d("SummaryActivity", "Portfolio cleared, ready for update...");
+        TextView positions = (TextView) findViewById(R.id.setOfPositionsView);
 
         SQLiteDatabase staticDB = PortfolioDatabase.getInstance(this).getWritableDatabase();
         String tableName = PortfolioDatabase.TABLE_NAME;
@@ -74,6 +77,7 @@ public class SummaryActivity extends AppCompatActivity {
                 Stock s = new Stock(ticker, name, price, percChange, yearHigh, yearLow, eps, pe, numShares);
                 portfolioList.add(s);
                 Log.d("SummaryActivity", ticker + " successfully added to portfolio list!");
+                positions.append(name);
 
                 cursor.moveToNext();
             }
