@@ -54,8 +54,9 @@ public class SummaryActivity extends AppCompatActivity {
     // Update portfolio by clearing list and querying DB
     public void updatePortfolio() {
         portfolioList.clear();
-        Log.d("SummaryActivity", "Portfolio cleared, ready for update...");
         TextView positions = (TextView) findViewById(R.id.setOfPositionsView);
+        positions.setText("");
+        Log.d("SummaryActivity", "Portfolio and view cleared, ready for update...");
 
         SQLiteDatabase staticDB = PortfolioDatabase.getInstance(this).getWritableDatabase();
         String tableName = PortfolioDatabase.TABLE_NAME;
