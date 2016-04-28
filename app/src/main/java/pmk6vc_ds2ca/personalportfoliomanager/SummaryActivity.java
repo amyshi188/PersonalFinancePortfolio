@@ -32,6 +32,10 @@ public class SummaryActivity extends AppCompatActivity {
         if (databaseExists(getApplicationContext())) {
             // Query DB here
             updatePortfolio();
+            // Analytics
+            displayPortfolioValue();
+            displayPortfolioPE();
+            displayPortfolioEPS();
         } else {
             // Indicate no DB yet
             SummaryActivity.this.runOnUiThread(new Runnable() {
@@ -83,6 +87,66 @@ public class SummaryActivity extends AppCompatActivity {
                 cursor.moveToNext();
             }
         }
+    }
+
+    // ANALYTICS
+
+    public double calculatePortfolioValue() {
+        double value = 0;
+        for (Stock s : portfolioList) {
+            double tempValue = s.getNumShares() * s.getCurrentPrice();
+            value += tempValue;
+        }
+
+        return value; // Return value as CENTS
+    }
+
+    public void displayPortfolioValue() {
+        double valueDol = calculatePortfolioValue() / 100; // Value in dollars
+        TextView pval = (TextView) findViewById(R.id.portfolioValue);
+        pval.setText("$" + Double.toString(valueDol));
+
+    }
+
+    public double calculatePortfolioPE() {
+        double price = 0;
+        double earnings = 0;
+        double pe = 0;
+        for (Stock s : portfolioList) {
+            double tempValue = s.getNumShares() * s.getCurrentPrice() / 100; // Need to go back to dollars
+            double tempEarnings = s.getNumShares() * s.getEps();
+            price += tempValue;
+            earnings += tempEarnings;
+        }
+        pe = price / earnings;
+
+        return pe;
+    }
+
+    public void displayPortfolioPE() {
+        double pe = calculatePortfolioPE();
+        TextView ppe = (TextView) findViewById(R.id.portfolioPE);
+        ppe.setText(Double.toString(pe));
+    }
+
+    public double calculatePortfolioEPS() {
+        double earnings = 0;
+        double numShares = 0;
+        double eps = 0;
+        for (Stock s : portfolioList) {
+            double tempEarnings = s.getNumShares() * s.getEps();
+            earnings += tempEarnings * s.getEps();
+            numShares += s.getNumShares();
+        }
+        eps = earnings / numShares;
+
+        return eps;
+    }
+
+    public void displayPortfolioEPS() {
+        double eps = calculatePortfolioEPS();
+        TextView peps = (TextView) findViewById(R.id.portfolioEPS);
+        peps.setText(Double.toString(eps));
     }
 
     // Listener for Manage Portfolio button

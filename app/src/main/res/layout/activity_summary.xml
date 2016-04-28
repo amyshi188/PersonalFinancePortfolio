@@ -20,4 +20,56 @@
         android:layout_marginTop="140dp"
         android:layout_alignEnd="@+id/managePortfolioButton" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Portfolio Value  "
+        android:id="@+id/portfolioValLabel"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/portfolioValue"
+        android:layout_centerVertical="true"
+        android:layout_alignEnd="@+id/managePortfolioButton"
+        android:layout_toEndOf="@+id/portfolioValLabel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Portfolio P/E   "
+        android:id="@+id/portfolioPELabel"
+        android:layout_below="@+id/portfolioValLabel"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/portfolioPE"
+        android:layout_below="@+id/portfolioValLabel"
+        android:layout_toEndOf="@+id/portfolioPELabel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Portfolio EPS  "
+        android:id="@+id/portfolioEPSLabel"
+        android:layout_below="@+id/portfolioPELabel"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/portfolioEPS"
+        android:layout_below="@+id/portfolioPE"
+        android:layout_toEndOf="@+id/portfolioPE" />
+
 </RelativeLayout>
