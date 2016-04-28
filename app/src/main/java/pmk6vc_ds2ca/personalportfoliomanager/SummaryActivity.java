@@ -90,7 +90,11 @@ public class SummaryActivity extends AppCompatActivity {
     }
 
     // ANALYTICS
-
+    /*
+     * Portfolio value
+     * Portfolio PE
+     * Portfolio EPS
+     */
     public double calculatePortfolioValue() {
         double value = 0;
         for (Stock s : portfolioList) {
