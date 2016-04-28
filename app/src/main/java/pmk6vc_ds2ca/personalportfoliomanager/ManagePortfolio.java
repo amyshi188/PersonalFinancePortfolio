@@ -41,12 +41,14 @@ public class ManagePortfolio extends AppCompatActivity implements ShakeDetector.
     }
 
     // Listener for Edit Portfolio button
+    /*
     public void editPortfolioScreen(View view) {
         // Kick off ManagePortfolio activity
         Intent myIntent = new Intent(ManagePortfolio.this, EditPortfolio.class);
         Log.d("SummaryActivity", "Moving to ManagePortfolio activity...");
         ManagePortfolio.this.startActivity(myIntent);
     }
+    */
 
     // Shake listener
     public void hearShake() {

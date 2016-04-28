@@ -44,10 +44,9 @@ public class SummaryActivity extends AppCompatActivity {
             createChart();
 
             // Analytics
-            // NEED APPROPRIATE VIEW COMPONENTS
-            // displayPortfolioValue();
-            // displayPortfolioPE();
-            // displayPortfolioEPS();
+            displayPortfolioValue();
+            displayPortfolioPE();
+            displayPortfolioEPS();
         } else {
             // Indicate no DB yet
             SummaryActivity.this.runOnUiThread(new Runnable() {
@@ -69,6 +68,7 @@ public class SummaryActivity extends AppCompatActivity {
     }
 
     // Create chart
+    // https://www.numetriclabz.com/android-pie-chart-using-mpandroidchart-library-tutorial/ is your friend
     public void createChart() {
         PieChart pieChart = (PieChart) findViewById(R.id.chart);
         // Create data values
@@ -81,7 +81,7 @@ public class SummaryActivity extends AppCompatActivity {
             // Add data
             double portval = calculatePortfolioValue();
             double posval = s.getNumShares() * s.getCurrentPrice();
-            float val = (float)(posval/portval);
+            float val = (float)(100*posval/portval);
             entries.add(new Entry(val, i));
             // Add label
             labels.add(s.getTicker());
@@ -90,9 +90,11 @@ public class SummaryActivity extends AppCompatActivity {
         }
 
         PieDataSet dataset = new PieDataSet(entries, "Position weights");
-        dataset.setColors(ColorTemplate.COLORFUL_COLORS);
+        dataset.setColors(ColorTemplate.PASTEL_COLORS);
         PieData data = new PieData(labels, dataset);
         pieChart.setData(data);
+        pieChart.setDescription("Portfolio breakdown by position, in %");
+        //pieChart.animateY(2000);
     }
 
     // Update portfolio by clearing list and querying DB
@@ -142,7 +144,7 @@ public class SummaryActivity extends AppCompatActivity {
 
         return value; // Return value as CENTS
     }
-    /*
+
     public void displayPortfolioValue() {
         double valueDol = calculatePortfolioValue() / 100; // Value in dollars
         TextView pval = (TextView) findViewById(R.id.portfolioValue);
@@ -181,7 +183,6 @@ public class SummaryActivity extends AppCompatActivity {
             numShares += s.getNumShares();
         }
         eps = earnings / numShares;
-
         return eps;
     }
 
@@ -190,7 +191,6 @@ public class SummaryActivity extends AppCompatActivity {
         TextView peps = (TextView) findViewById(R.id.portfolioEPS);
         peps.setText(Double.toString(eps));
     }
-    */
 
     // Listener for Manage Portfolio button
     public void managePortfolioScreen(View view) {

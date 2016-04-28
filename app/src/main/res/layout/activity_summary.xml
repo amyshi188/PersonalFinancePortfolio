@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Manage Portfolio"
-        android:id="@+id/managePortfolioButton"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="managePortfolioScreen"/>
 
     <!--<TextView-->
         <!--android:layout_width="wrap_content"-->
@@ -64,11 +55,68 @@
         <!--android:layout_below="@+id/portfolioPE"-->
         <!--android:layout_toEndOf="@+id/portfolioPE" />-->
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manage Portfolio"
+        android:id="@+id/managePortfolioButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="managePortfolioScreen"
+        android:layout_gravity="right|top" />
+
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/chart"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/portfolioValLabel"
-        android:layout_below="@+id/managePortfolioButton" />
+        android:layout_below="@+id/managePortfolioButton"
+        android:layout_height="538dp"
+        android:layout_gravity="center_horizontal|top" />
 
-</RelativeLayout>
+    <TextView
+        android:layout_width="177dp"
+        android:layout_height="251dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Total Value"
+        android:id="@+id/portfolioValLabel"
+        android:layout_gravity="left|bottom" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="251dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Portfolio P/E Ratio"
+        android:id="@+id/portfolioPELabel"
+        android:layout_gravity="center_horizontal|bottom" />
+
+    <TextView
+        android:layout_width="170dp"
+        android:layout_height="253dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Portfolio EPS"
+        android:id="@+id/portfolioEPSLabel"
+        android:layout_gravity="right|bottom" />
+
+    <TextView
+        android:layout_width="180dp"
+        android:layout_height="149dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/portfolioValue"
+        android:layout_gravity="left|bottom" />
+
+    <TextView
+        android:layout_width="180dp"
+        android:layout_height="149dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=""
+        android:id="@+id/portfolioPE"
+        android:layout_gravity="center_horizontal|bottom" />
+
+    <TextView
+        android:layout_width="180dp"
+        android:layout_height="149dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=""
+        android:id="@+id/portfolioEPS"
+        android:layout_gravity="right|bottom" />
+
+</FrameLayout>
