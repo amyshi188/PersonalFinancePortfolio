@@ -42,27 +42,14 @@ public class ManagePortfolio extends AppCompatActivity implements ShakeDetector.
 
     // Shake listener
     public void hearShake() {
-        EditText nameText = (EditText) findViewById(R.id.name);
-        EditText currentPriceText = (EditText) findViewById(R.id.current_price);
-        EditText pctchangeText = (EditText) findViewById(R.id.pctchange);
-        EditText yearhighText = (EditText) findViewById(R.id.yearhigh);
-        EditText yearlowText = (EditText) findViewById(R.id.yearlow);
-        EditText epsText = (EditText) findViewById(R.id.eps);
-        EditText peratioText = (EditText) findViewById(R.id.peratio);
-
-        try {
-            nameText.setText("");
-            currentPriceText.setText("");
-            pctchangeText.setText("");
-            yearhighText.setText("");
-            yearlowText.setText("");
-            epsText.setText("");
-            peratioText.setText("");
-        } catch (Exception e) {
-            // Stuff
-        }
-
-        Toast.makeText(this, "Screen contents cleared due to shake!", Toast.LENGTH_SHORT).show();
+        RandomTicker rt = new RandomTicker();
+        String randomStock = rt.get();
+        // Execute task
+        YahooPuller fetcher = new YahooPuller();
+        fetcher.execute(randomStock);
+        EditText tickerBox = (EditText) findViewById(R.id.ticker_input);
+        tickerBox.setText(randomStock);
+        Toast.makeText(this, "Stock" + randomStock + " chosen due to shake!", Toast.LENGTH_SHORT).show();
     }
 
     public void getStockInfo(View v) {

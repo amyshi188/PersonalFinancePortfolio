@@ -21,13 +21,14 @@ import java.util.ArrayList;
  */
 public class SummaryActivity extends AppCompatActivity {
 
-    private static ArrayList<Stock> portfolioList = new ArrayList<>(); // Holds most up to date set of stocks
+    private static ArrayList<Stock> portfolioList; // Holds most up to date set of stocks
     private String toastMsgNoDB = "No pre-existing portfolio. Try adding positions!";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_summary); // Set summary layout here
+        this.portfolioList = new ArrayList<Stock>();
         // Check if DB exists
         if (databaseExists(getApplicationContext())) {
             // Query DB here
