@@ -3,6 +3,7 @@ package pmk6vc_ds2ca.personalportfoliomanager;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 /**
  * Created by varunkulkarni122 on 4/16/16.
@@ -13,6 +14,16 @@ public class PortfolioDatabase extends SQLiteOpenHelper {
 
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "Portfolio.db";
+    public static final String TABLE_NAME = "Portfolio";
+    public static final String TICKER_INDEX = "Ticker";
+    public static final String NAME_INDEX = "Name";
+    public static final String PRICE_INDEX = "Price";
+    public static final String PC_INDEX = "PercChange";
+    public static final String YH_INDEX = "YearHigh";
+    public static final String YL_INDEX = "YearLow";
+    public static final String EPS_INDEX = "EPS";
+    public static final String PE_INDEX = "PriceEarnings";
+    public static final String NUMSHARES_INDEX = "NumShares";
 
 
     // Implement singleton pattern to ensure static DB reference throughout application
@@ -24,6 +35,7 @@ public class PortfolioDatabase extends SQLiteOpenHelper {
         // See this article for more information: http://bit.ly/6LRzfx
         if (STATIC_PORTFOLIO == null) {
             STATIC_PORTFOLIO = new PortfolioDatabase(context.getApplicationContext());
+            Log.d("PortfolioDatabase", "PORTFOLIO CREATED!");
         }
         return STATIC_PORTFOLIO;
     }
@@ -44,16 +56,17 @@ public class PortfolioDatabase extends SQLiteOpenHelper {
      */
     // Don't forget to add number of shares as a field!
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table Portfolio " +
+        db.execSQL("create table " + TABLE_NAME + " " +
                 "(" +
-                "Name varchar(100), " +
-                "Price integer, " +
-                "PercChange float, " +
-                "YearHigh integer, " +
-                "YearLow integer, " +
-                "EPS float, " +
-                "PriceEarnings float," +
-                "NumShares integer" +
+                TICKER_INDEX + " varchar(100), " +
+                NAME_INDEX + " varchar(100), " +
+                PRICE_INDEX + " integer, " +
+                PC_INDEX + " float, " +
+                YH_INDEX + " integer, " +
+                YL_INDEX + " integer, " +
+                EPS_INDEX + " float, " +
+                PE_INDEX + " float," +
+                NUMSHARES_INDEX + " integer" +
                 ")"
         );
     }

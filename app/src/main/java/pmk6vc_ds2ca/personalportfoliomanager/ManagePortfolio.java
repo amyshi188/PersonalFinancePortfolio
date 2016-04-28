@@ -23,7 +23,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class ManagePortfolio extends AppCompatActivity implements ShakeDetector.Listener {
-//    private PortfolioDatabase portfolio = new PortfolioDatabase(this); // Create new DB
+
     private String[] stockInfo = new String[7]; // Info for the current stock in question
     private final CharSequence toastMsgFindData = "Data not available. Check internet connection and spelling.";
     private final CharSequence toastMsgNaN = "Please input an integer number of shares";
@@ -124,6 +124,7 @@ public class ManagePortfolio extends AppCompatActivity implements ShakeDetector.
 
         // Parse HTTP results to appropriate data format
         try {
+            String name = stockInfo[0];
             int currentPrice = Math.round(Float.parseFloat(stockInfo[1]) * 100); // Convert to cents
             float pctchange = percentChangeAsFloat(stockInfo[2]);
             int yearhigh = Math.round(Float.parseFloat(stockInfo[3]) * 100);
@@ -132,14 +133,15 @@ public class ManagePortfolio extends AppCompatActivity implements ShakeDetector.
             float pe = Float.parseFloat(stockInfo[6]);
 
             // Put items in map
-            values.put("Name", stockInfo[0]);
-            values.put("Price", currentPrice);
-            values.put("PercChange", pctchange);
-            values.put("YearHigh", yearhigh);
-            values.put("YearLow", yearlow);
-            values.put("EPS", eps);
-            values.put("PriceEarnings", pe);
-            values.put("NumShares", numShares);
+            values.put(PortfolioDatabase.TICKER_INDEX, ticker);
+            values.put(PortfolioDatabase.NAME_INDEX, name);
+            values.put(PortfolioDatabase.PRICE_INDEX, currentPrice);
+            values.put(PortfolioDatabase.PC_INDEX, pctchange);
+            values.put(PortfolioDatabase.YH_INDEX, yearhigh);
+            values.put(PortfolioDatabase.YL_INDEX, yearlow);
+            values.put(PortfolioDatabase.EPS_INDEX, eps);
+            values.put(PortfolioDatabase.PE_INDEX, pe);
+            values.put(PortfolioDatabase.NUMSHARES_INDEX, numShares);
 
             portfolioDB.insert("Portfolio",
                     null,

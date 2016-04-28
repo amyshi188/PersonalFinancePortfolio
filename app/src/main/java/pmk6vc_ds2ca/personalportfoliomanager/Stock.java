@@ -28,23 +28,24 @@ public class Stock {
     // Fields
     private String name;
     private String ticker;
-    private double currentPrice;
+    private int currentPrice;
+    private float pctchange;
+    private float yearlow, yearhigh;
+    private float eps, peratio;
     private int numShares;
-    private double pctchange;
-    private double yearlow, yearhigh;
-    private double eps, peratio;
 
     // Full constructor
-    public Stock(String name, String ticker, double currentPrice, int numShares, double pctchange, double yearlow, double yearhigh, double eps, double peratio) {
-        this.name = name;
+//    public Stock(String name, String ticker, double currentPrice, int numShares, double pctchange, double yearlow, double yearhigh, double eps, double peratio) {
+    public Stock(String ticker, String name, int currentPrice, float pctchange, float yearhigh, float yearlow, float eps, float peratio, int numShares) {
         this.ticker = ticker;
+        this.name = name;
         this.currentPrice = currentPrice;
-        this.numShares = numShares;
         this.pctchange = pctchange;
-        this.yearlow = yearlow;
         this.yearhigh = yearhigh;
+        this.yearlow = yearlow;
         this.eps = eps;
         this.peratio = peratio;
+        this.numShares = numShares;
     }
 
     // Getters
