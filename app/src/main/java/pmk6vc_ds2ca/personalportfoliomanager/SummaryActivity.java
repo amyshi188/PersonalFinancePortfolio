@@ -21,6 +21,8 @@ import org.w3c.dom.Text;
 
 import java.io.File;
 import java.lang.reflect.Array;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 /**
@@ -169,8 +171,9 @@ public class SummaryActivity extends AppCompatActivity {
 
     public void displayPortfolioPE() {
         double pe = calculatePortfolioPE();
+        DecimalFormat df = new DecimalFormat("#.##");
         TextView ppe = (TextView) findViewById(R.id.portfolioPE);
-        ppe.setText(Double.toString(pe));
+        ppe.setText(df.format(pe));
     }
 
     public double calculatePortfolioEPS() {
@@ -178,18 +181,19 @@ public class SummaryActivity extends AppCompatActivity {
         double numShares = 0;
         double eps = 0;
         for (Stock s : portfolioList) {
-            double tempEarnings = s.getNumShares() * s.getEps();
-            earnings += tempEarnings * s.getEps();
+            earnings += (s.getEps() * s.getNumShares());
             numShares += s.getNumShares();
         }
+        //eps = earnings/portfolioList.size();
         eps = earnings / numShares;
         return eps;
     }
 
     public void displayPortfolioEPS() {
         double eps = calculatePortfolioEPS();
+        DecimalFormat df = new DecimalFormat("#.##");
         TextView peps = (TextView) findViewById(R.id.portfolioEPS);
-        peps.setText(Double.toString(eps));
+        peps.setText(df.format(eps));
     }
 
     // Listener for Manage Portfolio button
