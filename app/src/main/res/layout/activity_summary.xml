@@ -19,6 +19,15 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Delete Database"
+        android:id="@+id/deleteDB"
+        android:onClick="deleteDB"
+        android:layout_below="@+id/findFinancialAdvisersButton"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Find Financial Advisers"
         android:id="@+id/findFinancialAdvisersButton"
         android:layout_alignParentTop="true"

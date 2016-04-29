@@ -61,12 +61,15 @@ public class SummaryActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
+        super.onResume();
         // Check if DB exists
         if (databaseExists(getApplicationContext())) {
             updatePortfolio();
             createChart();
+            displayPortfolioValue();
+            displayPortfolioPE();
+            displayPortfolioEPS();
         };
-        super.onResume();
     }
 
     // Create chart
@@ -202,6 +205,16 @@ public class SummaryActivity extends AppCompatActivity {
         Intent myIntent = new Intent(SummaryActivity.this, ManagePortfolio.class);
         Log.d("SummaryActivity", "Moving to ManagePortfolio activity...");
         SummaryActivity.this.startActivity(myIntent);
+    }
+
+    public void deleteDB(View v) {
+        getApplicationContext().deleteDatabase(PortfolioDatabase.DATABASE_NAME);
+        updatePortfolio();
+        createChart();
+        displayPortfolioValue();
+        displayPortfolioPE();
+        displayPortfolioEPS();
+        Toast.makeText(SummaryActivity.this, "Database deleted!", Toast.LENGTH_LONG).show();
     }
 
     // Check if DB exists

@@ -37,6 +37,6 @@ public class RandomTicker {
 
     public String get() {
         int idx = (int)(Math.random() * this.tickers.length);
-        return this.tickers[idx];
+        return this.tickers[idx].toLowerCase();
     }
 }
