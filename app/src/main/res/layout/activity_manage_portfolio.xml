@@ -178,17 +178,6 @@
         android:layout_marginTop="61dp"
         android:onClick="addPosition"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Find Nearby Financial Advisers"
-        android:id="@+id/findAdvisers"
-        android:layout_below="@+id/eps_label"
-        android:layout_toEndOf="@+id/addPosition"
-        android:layout_marginTop="61dp"
-        android:layout_marginLeft="70dp"
-        android:onClick="findAdvisers"/>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -203,8 +192,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/numShares_input"
-        android:layout_alignTop="@+id/numSharesLabel"
-        android:layout_alignStart="@+id/findAdvisers"
+        android:layout_below="@+id/numSharesLabel"
         android:inputType="number"/>
 
     <!--<Button-->

@@ -216,4 +216,10 @@ public class SummaryActivity extends AppCompatActivity {
         return dbFile.exists();
     }
 
+    //Find advisors button on the main screen
+    public void findAdvisers(View v) {
+        Intent intent = new Intent(this, LocationActivity.class);
+        startActivity(intent);
+    }
+
 }

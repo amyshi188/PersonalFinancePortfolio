@@ -165,12 +165,6 @@ public class ManagePortfolio extends AppCompatActivity implements ShakeDetector.
 
     }
 
-    //Find advisors button on the main screen
-    public void findAdvisers(View v) {
-        Intent intent = new Intent(this, LocationActivity.class);
-        startActivity(intent);
-    }
-
     // Return percent change as float
     private float percentChangeAsFloat(String s) {
         float pctChange = 1;
