@@ -59,7 +59,6 @@ public class ManagePortfolio extends AppCompatActivity implements ShakeDetector.
         fetcher.execute(randomStock);
         EditText tickerBox = (EditText) findViewById(R.id.ticker_input);
         tickerBox.setText(randomStock);
-        Toast.makeText(this, "Stock " + randomStock + " chosen due to shake!", Toast.LENGTH_SHORT).show();
     }
 
     public void getStockInfo(View v) {
